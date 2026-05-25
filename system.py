@@ -197,3 +197,90 @@ delete_btn = tk.Button(
 
 delete_btn.grid(row=0, column=2, padx=5)
 
+# ADD STUDENT
+def add_student():
+
+    student_id = entry_id.get()
+    name = entry_name.get()
+    course = entry_course.get()
+    year = entry_year.get()
+
+    if student_id == "" or name == "" or course == "" or year == "":
+        messagebox.showwarning("Error", "Please fill all fields")
+        return
+
+    table.insert("", tk.END, values=(
+        student_id,
+        name,
+        course,
+        year
+    ))
+
+    clear_fields()
+
+    messagebox.showinfo("Success", "Student Added Successfully")
+
+
+# CLEAR FIELDS
+def clear_fields():
+
+    entry_id.delete(0, tk.END)
+    entry_name.delete(0, tk.END)
+    entry_course.delete(0, tk.END)
+    entry_year.delete(0, tk.END)
+
+
+# DELETE STUDENT
+def delete_student():
+
+    selected = table.selection()
+
+    if not selected:
+        messagebox.showwarning("Error", "Please select a student")
+        return
+
+    table.delete(selected)
+
+    messagebox.showinfo("Deleted", "Student Deleted")
+
+
+# UPDATE STUDENT
+def update_student():
+
+    selected = table.selection()
+
+    if not selected:
+        messagebox.showwarning("Error", "Select a student first")
+        return
+
+    table.item(selected, values=(
+        entry_id.get(),
+        entry_name.get(),
+        entry_course.get(),
+        entry_year.get()
+    ))
+
+    clear_fields()
+
+    messagebox.showinfo("Updated", "Student Updated")
+
+
+# SELECT STUDENT
+def select_student(event):
+
+    selected = table.selection()
+
+    if selected:
+
+        values = table.item(selected, "values")
+
+        clear_fields()
+
+        entry_id.insert(0, values[0])
+        entry_name.insert(0, values[1])
+        entry_course.insert(0, values[2])
+        entry_year.insert(0, values[3])
+
+
+
+
