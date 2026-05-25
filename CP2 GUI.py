@@ -176,3 +176,67 @@ entry_id = tk.Entry(
 
 
 entry_id.grid(row=1, column=0, pady=5, ipady=8)
+
+tk.Label(
+    form_frame,
+    text="Full Name",
+    bg=card_color,
+    fg="white",
+    font=label_font
+).grid(row=2, column=0, sticky="w", pady=10)
+
+
+entry_name = tk.Entry(
+    form_frame,
+    font=entry_font,
+    bg="#2f2f45",
+    fg="white",
+    insertbackground="white",
+    bd=0,
+    width=25
+)
+
+
+entry_name.grid(row=3, column=0, pady=5, ipady=8)
+
+tk.Label(
+    form_frame,
+    text="Course",
+    bg=card_color,
+    fg="white",
+    font=label_font
+).grid(row=4, column=0, sticky="w", pady=10)
+
+
+entry_course = tk.Entry(
+    form_frame,
+    font=entry_font,
+    bg="#2f2f45",
+    fg="white",
+    insertbackground="white",
+    bd=0,
+    width=25
+)
+
+entry_course.grid(row=5, column=0, pady=5, ipady=8)
+
+tk.Label(
+    form_frame,
+    text="Year Level",
+    bg=card_color,
+    fg="white",
+    font=label_font
+).grid(row=6, column=0, sticky="w", pady=10)
+
+
+entry_year = tk.Entry(
+    form_frame,
+    font=entry_font,
+    bg="#2f2f45",
+    fg="white",
+    insertbackground="white",
+    bd=0,
+    width=25
+)
+
+entry_year.grid(row=7, column=0, pady=5, ipady=8)
