@@ -342,3 +342,28 @@ style.configure(
     foreground="white",
     font=("Poppins", 11, "bold")
 )
+
+columns = ("ID", "Name", "Course", "Year")
+
+
+table = ttk.Treeview(
+    table_frame,
+    columns=columns,
+    show="headings",
+    height=15
+)
+
+
+for col in columns:
+
+
+    table.heading(col, text=col)
+    table.column(col, width=150)
+
+
+table.pack()
+
+table.bind("<ButtonRelease-1>", select_student)
+
+
+window.mainloop()
