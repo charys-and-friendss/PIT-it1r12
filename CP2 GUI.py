@@ -240,3 +240,105 @@ entry_year = tk.Entry(
 )
 
 entry_year.grid(row=7, column=0, pady=5, ipady=8)
+
+button_frame = tk.Frame(
+    form_frame,
+    bg=card_color
+)
+
+
+button_frame.grid(row=8, column=0, pady=25)
+
+
+btn_font = ("Poppins", 10, "bold")
+
+
+add_btn = tk.Button(
+    button_frame,
+    text="ADD",
+    bg="#7c5cff",
+    fg="white",
+    font=btn_font,
+    width=12,
+    bd=0,
+    pady=8,
+    cursor="hand2",
+    command=add_student
+)
+
+
+add_btn.grid(row=0, column=0, padx=5)
+
+
+update_btn = tk.Button(
+    button_frame,
+    text="UPDATE",
+    bg="#00b894",
+    fg="white",
+    font=btn_font,
+    width=12,
+    bd=0,
+    pady=8,
+    cursor="hand2",
+    command=update_student
+)
+
+
+update_btn.grid(row=0, column=1, padx=5)
+
+
+delete_btn = tk.Button(
+    button_frame,
+    text="DELETE",
+    bg="#d63031",
+    fg="white",
+    font=btn_font,
+    width=12,
+    bd=0,
+    pady=8,
+    cursor="hand2",
+    command=delete_student
+)
+
+
+delete_btn.grid(row=0, column=2, padx=5)
+
+
+
+table_frame = tk.Frame(
+    main_frame,
+    bg=card_color
+)
+
+
+table_frame.pack(side="right", padx=20, pady=20)
+
+style = ttk.Style()
+
+
+style.theme_use("default")
+
+
+style.configure(
+    "Treeview",
+    background="#2f2f45",
+    foreground="white",
+    fieldbackground="#2f2f45",
+    rowheight=30,
+    borderwidth=0,
+    font=("Poppins", 10)
+)
+
+
+style.map(
+    "Treeview",
+    background=[("selected", "#7c5cff")]
+)
+
+
+style.configure(
+    "Treeview.Heading",
+    background="#7c5cff",
+    foreground="white",
+    font=("Poppins", 11, "bold")
+)
